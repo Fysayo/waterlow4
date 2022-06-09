@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/start2">
+
+    <fragment
+        android:id="@+id/start2"
+        android:name="com.example.waterlow4.Start"
+        android:label="Start" >
+        <action
+            android:id="@+id/action_start2_to_gender"
+            app:destination="@id/gender" />
+    </fragment>
+    <fragment
+        android:id="@+id/gender"
+        android:name="com.example.waterlow4.Gender"
+        android:label="fragment_gender"
+        tools:layout="@layout/fragment_gender" >
+        <action
+            android:id="@+id/action_gender_to_start2"
+            app:destination="@id/start2" />
+    </fragment>
+</navigation>

@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    tools:context=".ui.questions.QuestionFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/Primary">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/courier_prime_bold"
+                android:text="Poor appetite?"
+                android:layout_marginTop="100sp"
+                android:layout_marginStart="16sp"
+                android:textSize="35sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="10dp"
+                android:fontFamily="@font/courier_prime_bold"
+                android:background="@drawable/shadowy_bckgrd"
+                android:padding="20dp"
+                android:paddingStart="25dp"
+                android:textColor="#7A8089"
+                android:textSize="18sp"
+                android:text="@string/no2"
+                tools:text="No" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/shadowy_bckgrd"
+                android:fontFamily="@font/courier_prime_bold"
+                android:padding="15dp"
+                android:paddingStart="25dp"
+                android:textColor="#7A8089"
+                android:textSize="18sp"
+                android:text="@string/yes"
+                tools:text="Yes" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="160dp"
+                android:layout_marginTop="-10dp"
+                android:orientation="horizontal">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/button_fix"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                    android:layout_width="145dp"
+                    android:layout_height="75dp"
+                    android:layout_marginHorizontal="31dp"
+                    android:layout_marginStart="22dp"
+                    android:layout_marginTop="30dp"
+                    android:height="70dp"
+                    android:fontFamily="@font/courier_prime_bold"
+                    android:text="Back"
+                    android:textAllCaps="false"
+                    android:textColor="@color/black"
+                    android:textSize="18dp"
+                    app:cornerRadius="5dp"
+                    app:strokeColor="@color/black"
+                    app:strokeWidth="1dp" />
+
+                <Button
+                    android:id="@+id/continue_button"
+                    android:layout_width="140dp"
+                    android:layout_height="75dp"
+                    android:layout_marginStart="48dp"
+                    android:layout_marginTop="30dp"
+                    android:height="70dp"
+                    android:backgroundTint="@color/Secondary"
+                    android:fontFamily="@font/courier_prime_bold"
+                    android:text="Continue"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textSize="18dp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+</layout>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="button0005" type="id">back_button</item>
+    <item name="continue_button" type="id">continue_button</item>
+    <item name="button_fix" type="id">buttonFix</item>
+</resources>
