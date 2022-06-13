@@ -18,9 +18,6 @@ class Gender : Fragment() {
         val binding: FragmentGenderBinding =
             DataBindingUtil.inflate(inflater, R.layout.fragment_gender, container, false
             )
-        binding.btnGenderBack.setOnClickListener { view: View ->
-            view.findNavController().navigate(R.id.action_gender_to_start2)
-        }
         return binding.root
     }
 
