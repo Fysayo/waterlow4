@@ -13,18 +13,23 @@ import com.example.waterlow4.databinding.FragmentQuestionBinding
 
 class QuestionFragment : Fragment() {
 
+    private var binding: FragmentQuestionBinding? = null
     private val viewModel: QuestionVM by activityViewModels()
-    private lateinit var binding: FragmentQuestionBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_question, container, false)
+        val fragmentBinding = FragmentQuestionBinding.inflate(inflater, container, false)
+        binding = fragmentBinding
 
-        Log.i("QuestionVM", "called ViewModel!")
-
-        return binding.root
+        return fragmentBinding.root
     }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        binding?.questionFragment = this
+    }
+
 
 }

@@ -3,6 +3,15 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <data>
+        <variable
+            name="questionFragment"
+            type="com.example.waterlow4.ui.questions.QuestionFragment" />
+        <variable
+            name="questionVM"
+            type="com.example.waterlow4.ui.questions.QuestionVM" />
+    </data>
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -18,10 +27,23 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/courier_prime_bold"
-                android:text="Poor appetite?"
-                android:layout_marginTop="100sp"
+                android:text="Title"
+                android:layout_marginTop="50sp"
                 android:layout_marginStart="16sp"
                 android:textSize="35sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16sp"
+                android:layout_marginTop="5sp"
+                android:fontFamily="@font/courier_prime_bold"
+                android:text="Subtitle"
+                android:textSize="18sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
@@ -31,7 +53,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:layout_marginStart="16dp"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="20dp"
                 android:layout_marginEnd="16dp"
                 android:layout_marginBottom="10dp"
                 android:fontFamily="@font/courier_prime_bold"
@@ -41,7 +63,7 @@
                 android:textColor="#7A8089"
                 android:textSize="18sp"
                 android:text="@string/no2"
-                tools:text="No" />
+                tools:text="Choices 1" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -57,7 +79,7 @@
                 android:textColor="#7A8089"
                 android:textSize="18sp"
                 android:text="@string/yes"
-                tools:text="Yes" />
+                tools:text="Choices 2" />
 
             <LinearLayout
                 android:layout_width="match_parent"

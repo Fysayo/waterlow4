@@ -8,18 +8,13 @@
     <fragment
         android:id="@+id/start2"
         android:name="com.example.waterlow4.Start"
-        android:label="Start" >
+        android:label="@string/start" >
         <action
-            android:id="@+id/action_start2_to_gender"
-            app:destination="@id/gender" />
+            android:id="@+id/action_start2_to_questionFragment"
+            app:destination="@id/questionFragment" />
     </fragment>
     <fragment
-        android:id="@+id/gender"
-        android:name="com.example.waterlow4.Gender"
-        android:label="fragment_gender"
-        tools:layout="@layout/fragment_gender" >
-        <action
-            android:id="@+id/action_gender_to_start2"
-            app:destination="@id/start2" />
-    </fragment>
+        android:id="@+id/questionFragment"
+        android:name="com.example.waterlow4.ui.questions.QuestionFragment"
+        android:label="@string/question_fragment" />
 </navigation>

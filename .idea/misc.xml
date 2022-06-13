@@ -7,7 +7,7 @@
         <entry key="app/src/main/res/drawable/shadowy_bckgrd.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.1693840579710145" />
         <entry key="app/src/main/res/layout/fragment_gender.xml" value="0.12291666666666666" />
-        <entry key="app/src/main/res/layout/fragment_question.xml" value="0.1693840579710145" />
+        <entry key="app/src/main/res/layout/fragment_question.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_start.xml" value="0.1693840579710145" />
       </map>
     </option>

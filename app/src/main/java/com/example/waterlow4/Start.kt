@@ -20,7 +20,7 @@ class Start : Fragment() {
                 inflater, R.layout.fragment_start, container, false
             )
         binding.button001.setOnClickListener { view: View ->
-            view.findNavController().navigate(R.id.action_start2_to_gender)
+            view.findNavController().navigate(R.id.action_start2_to_questionFragment)
         }
         return binding.root
     }
