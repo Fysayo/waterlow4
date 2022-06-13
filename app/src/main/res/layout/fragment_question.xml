@@ -88,7 +88,7 @@
                 android:orientation="horizontal">
 
                 <com.google.android.material.button.MaterialButton
-                    android:id="@+id/button_fix"
+                    android:id="@+id/back_button"
                     style="@style/Widget.MaterialComponents.Button.OutlinedButton"
                     android:layout_width="145dp"
                     android:layout_height="75dp"

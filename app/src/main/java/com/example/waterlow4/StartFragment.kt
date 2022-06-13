@@ -9,7 +9,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.navigation.findNavController
 import com.example.waterlow4.databinding.FragmentStartBinding
 
-class Start : Fragment() {
+class StartFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -20,7 +20,7 @@ class Start : Fragment() {
                 inflater, R.layout.fragment_start, container, false
             )
         binding.button001.setOnClickListener { view: View ->
-            view.findNavController().navigate(R.id.action_start2_to_questionFragment)
+            view.findNavController().navigate(R.id.action_startFragment_to_questionFragment)
         }
         return binding.root
     }
