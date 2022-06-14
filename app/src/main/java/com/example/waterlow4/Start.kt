@@ -1,15 +1,19 @@
 package com.example.waterlow4
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
 import androidx.navigation.findNavController
 import com.example.waterlow4.databinding.FragmentStartBinding
+import com.example.waterlow4.ui.questions.QuestionVM
 
 class Start : Fragment() {
+
+    private val viewModel: QuestionVM by activityViewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -20,6 +24,8 @@ class Start : Fragment() {
                 inflater, R.layout.fragment_start, container, false
             )
         binding.button001.setOnClickListener { view: View ->
+            //To display the first question
+            viewModel.displayFirstQuestion()
             view.findNavController().navigate(R.id.action_start2_to_questionFragment)
         }
         return binding.root

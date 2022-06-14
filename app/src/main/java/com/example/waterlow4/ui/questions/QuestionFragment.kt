@@ -1,15 +1,13 @@
 package com.example.waterlow4.ui.questions
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
-import com.example.waterlow4.R
 import com.example.waterlow4.databinding.FragmentQuestionBinding
+import com.example.waterlow4.models.questionList
 
 class QuestionFragment : Fragment() {
 
@@ -19,7 +17,7 @@ class QuestionFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         val fragmentBinding = FragmentQuestionBinding.inflate(inflater, container, false)
         binding = fragmentBinding
 
@@ -28,7 +26,22 @@ class QuestionFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding?.questionFragment = this
+
+        //observe the index of the question and display its data
+        viewModel.questionIndex.observe(viewLifecycleOwner) {
+            val question = questionList[it]
+            binding?.title?.text = question.title
+            binding?.subtitle?.text = question.subtitle
+
+            //Display choices here....
+
+
+        }
+
+        //when the user click on continue button, the next question will be displayed
+        binding?.continueButton?.setOnClickListener {
+            viewModel.displayNextQuestion()
+        }
     }
 
 
