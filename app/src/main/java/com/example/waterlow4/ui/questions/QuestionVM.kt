@@ -16,7 +16,9 @@ class QuestionVM : ViewModel() {
     }
 
     fun displayNextQuestion() {
-        _questionIndex.value =+ 1
+        _questionIndex.value?.let {
+            _questionIndex.value = it + 1
+        }
     }
 
     fun displayPreviousQuestion() {
