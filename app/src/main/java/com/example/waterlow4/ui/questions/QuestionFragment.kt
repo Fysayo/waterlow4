@@ -41,5 +41,4 @@ class QuestionFragment : Fragment() {
         binding?.questionFragment = this
     }
 
-
 }

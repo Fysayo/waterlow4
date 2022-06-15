@@ -13,6 +13,7 @@
             android:id="@+id/action_startFragment_to_questionFragment"
             app:destination="@id/questionFragment" />
     </fragment>
+
     <fragment
         android:id="@+id/questionFragment"
         android:name="com.example.waterlow4.ui.questions.QuestionFragment"
