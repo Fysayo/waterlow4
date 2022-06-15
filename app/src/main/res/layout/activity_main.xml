@@ -10,7 +10,7 @@
         android:gravity="center_horizontal"
         tools:context=".MainActivity">
 
-        <fragment
+        <androidx.fragment.app.FragmentContainerView
             android:id="@+id/myNavHostFragment"
             android:name="androidx.navigation.fragment.NavHostFragment"
             android:background="@color/Primary"
