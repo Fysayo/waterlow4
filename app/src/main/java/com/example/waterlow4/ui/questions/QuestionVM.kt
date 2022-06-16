@@ -33,5 +33,4 @@ class QuestionVM : ViewModel() {
         _score.value =+ optionSelected
     }
 
-
 }
