@@ -6,6 +6,7 @@ data class Question(
     val choices: List<String>,
     val values: List<Int>,
 )
+
 val questionList = listOf(
     Question(
         title = "Gender",
