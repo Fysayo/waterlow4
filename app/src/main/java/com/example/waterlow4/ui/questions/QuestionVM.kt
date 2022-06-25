@@ -1,6 +1,5 @@
 package com.example.waterlow4.ui.questions
 
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -10,24 +9,19 @@ class QuestionVM : ViewModel() {
     private val _score = MutableLiveData<Int>()
     val score: LiveData<Int> = _score
 
-    private val _questionIndex = MutableLiveData(-1)
+    private val _questionIndex = MutableLiveData(0)
     val questionIndex: LiveData<Int> = _questionIndex
 
     fun displayFirstQuestion() {
+        //set the index to zero so that the first tem in the question list is displayed
         _questionIndex.value = 0
     }
 
-    fun displayPreviousQuestion(): Boolean {
-        return _questionIndex.value?.takeIf { it > 0 }?.let {
-            _questionIndex.value = it - 1
-            true
-        } ?: false
-    }
-
-
-    fun displayNextQuestion(): Boolean {
+    //returns true if there's a next question and
+    // returns false if it's already the last question
+    fun displayNextQuestion(): Boolean{
         return _questionIndex.value?.let {
-            return if (it < questionList.size - 1) {
+            return if(it < questionList.size - 1) {
                 _questionIndex.value = it + 1
                 true
             } else {
@@ -36,11 +30,17 @@ class QuestionVM : ViewModel() {
         } ?: true
     }
 
+    //returns true if there's a previous question and
+    // returns false if it's already the first question
+    fun displayPreviousQuestion():Boolean {
+        return _questionIndex.value?.takeIf { it > 0 }?.let {
+            _questionIndex.value = it - 1
+            true
+        } ?: false
+    }
+
     fun setAnswer(optionSelected: Int) {
-        _score.value = +optionSelected
+        _score.value =+ optionSelected
     }
 
 }
-
-
-
