@@ -6,8 +6,7 @@ import androidx.lifecycle.ViewModel
 import com.example.waterlow4.models.questionList
 
 class QuestionVM : ViewModel() {
-    private val _score = MutableLiveData<Int>()
-    val score: LiveData<Int> = _score
+    var score: Int = 0
 
     private val _questionIndex = MutableLiveData(0)
     val questionIndex: LiveData<Int> = _questionIndex
@@ -38,9 +37,4 @@ class QuestionVM : ViewModel() {
             true
         } ?: false
     }
-
-    fun setAnswer(optionSelected: Int) {
-        _score.value =+ optionSelected
-    }
-
 }

@@ -9,6 +9,7 @@ import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.waterlow4.databinding.FragmentQuestionBinding
+import com.example.waterlow4.models.Question
 import com.example.waterlow4.models.questionList
 
 class QuestionFragment : Fragment() {
@@ -16,6 +17,7 @@ class QuestionFragment : Fragment() {
     private var binding: FragmentQuestionBinding? = null
     private val viewModel: QuestionVM by activityViewModels()
     private val choiceAdapter = ChoiceAdapter()
+    private lateinit var question: Question
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -29,6 +31,14 @@ class QuestionFragment : Fragment() {
         }
 
         binding?.continueButton?.setOnClickListener {
+            val selectedPosition = choiceAdapter.selectedPosition
+            if (selectedPosition != null) {
+                viewModel.score += question.values[selectedPosition]
+            } else {
+                //TODO display warning to let the user answer the question
+                return@setOnClickListener
+            }
+
             if (!viewModel.displayNextQuestion()) {
                 //TODO display Result Fragment
             }
@@ -46,12 +56,11 @@ class QuestionFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         binding?.questionFragment = this
         viewModel.questionIndex.observe(viewLifecycleOwner) { index ->
-            val question = questionList[index]
+            question = questionList[index]
             binding?.title?.text = question.title
             binding?.subtitle?.text = question.subtitle
             binding?.choicesRecyclerView?.scrollToPosition(0)
-            choiceAdapter.choiceList = question.choices
-            choiceAdapter.notifyDataSetChanged()
+            choiceAdapter.reset(question.choices)
         }
     }
 
