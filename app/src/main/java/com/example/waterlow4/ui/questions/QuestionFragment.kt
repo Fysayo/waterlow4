@@ -9,7 +9,6 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.waterlow4.MainActivity
 import com.example.waterlow4.databinding.FragmentQuestionBinding
 import com.example.waterlow4.models.Question
 import com.example.waterlow4.models.questionList
@@ -37,7 +36,11 @@ class QuestionFragment : Fragment() {
             if (selectedPosition != null) {
                 viewModel.score += question.values[selectedPosition]
             } else {
-                Toast.makeText(this, "Please select an answer to continue", Toast.LENGTH_SHORT).show();
+                Toast.makeText(
+                    requireContext(),
+                    "Please select an answer to continue",
+                    Toast.LENGTH_SHORT
+                ).show();
                 //TODO display warning to let the user answer the question
                 return@setOnClickListener
             }
