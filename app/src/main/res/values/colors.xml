@@ -13,4 +13,7 @@
     <color name="Green">#0FDA1C</color>
     <color name="Red">#FF2211</color>
     <color name="Amber">#FF8511</color>
+
+    <color name="light_grey">#FCFCFC</color>
+    <color name="light_green">#34B54A</color>
 </resources>

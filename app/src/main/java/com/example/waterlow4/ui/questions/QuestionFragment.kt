@@ -9,7 +9,6 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.waterlow4.MainActivity
 import com.example.waterlow4.databinding.FragmentQuestionBinding
 import com.example.waterlow4.models.Question
 import com.example.waterlow4.models.questionList
@@ -33,12 +32,17 @@ class QuestionFragment : Fragment() {
         }
 
         binding?.continueButton?.setOnClickListener {
-            val selectedPosition = choiceAdapter.selectedPosition
-            if (selectedPosition != null) {
-                viewModel.score += question.values[selectedPosition]
+            val selectedPositions = choiceAdapter.selectedPositions
+            if (selectedPositions.isNotEmpty()) {
+                selectedPositions.forEach {
+                    viewModel.score += question.values[it]
+                }
             } else {
-                Toast.makeText(requireContext(), "Please select an answer to continue", Toast.LENGTH_SHORT).show();
-                //TODO display warning to let the user answer the question
+                Toast.makeText(
+                    requireContext(),
+                    "Please select an answer to continue",
+                    Toast.LENGTH_SHORT
+                ).show();
                 return@setOnClickListener
             }
 

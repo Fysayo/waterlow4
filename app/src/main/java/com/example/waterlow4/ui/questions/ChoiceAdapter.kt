@@ -1,15 +1,17 @@
 package com.example.waterlow4.ui.questions
 
+import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
+import com.example.waterlow4.R
 import com.example.waterlow4.databinding.ListItemQuestionBinding
 
 class ChoiceAdapter : RecyclerView.Adapter<ChoiceAdapter.QuestionViewHolder>() {
 
     var choiceList: List<String> = emptyList()
-    var selectedPosition: Int? = null
-    private var previousSelectedPosition: Int? = null
+    var selectedPositions = mutableListOf<Int>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): QuestionViewHolder {
         val binding = ListItemQuestionBinding.inflate(
@@ -29,19 +31,29 @@ class ChoiceAdapter : RecyclerView.Adapter<ChoiceAdapter.QuestionViewHolder>() {
 
     fun reset(list: List<String>) {
         choiceList = list
-        selectedPosition = null
-        previousSelectedPosition = null
+        selectedPositions.clear()
         notifyDataSetChanged()
     }
 
     override fun onBindViewHolder(holder: QuestionViewHolder, position: Int) {
         holder.binding.apply {
             choiceText.text = choiceList[position]
-            choiceCheckBox.isChecked = selectedPosition == position
-            choiceCheckBox.setOnClickListener {
-                previousSelectedPosition = selectedPosition
-                selectedPosition = if (choiceCheckBox.isChecked) position else null
-                previousSelectedPosition?.let { notifyItemChanged(it) }
+            if (selectedPositions.contains(position)) {
+                choiceText.setTextColor(Color.WHITE)
+                choiceText.setBackgroundColor(
+                    ContextCompat.getColor(choiceText.context, R.color.light_green)
+                )
+            } else {
+                choiceText.setTextColor(Color.BLACK)
+                choiceText.setBackgroundColor(
+                    ContextCompat.getColor(choiceText.context, R.color.light_grey)
+                )
+            }
+            choiceText.setOnClickListener {
+                val isPreviouslySelected = selectedPositions.contains(position)
+                if (isPreviouslySelected) selectedPositions.remove(position)
+                else selectedPositions.add(position)
+                notifyItemChanged(position)
             }
         }
     }
