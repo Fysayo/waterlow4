@@ -9,15 +9,22 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.waterlow4.R
 import com.example.waterlow4.databinding.FragmentQuestionBinding
 import com.example.waterlow4.models.Question
-import com.example.waterlow4.models.questionList
+import com.example.waterlow4.ui.main.MainVM
+import com.example.waterlow4.utils.hideElevation
+import com.example.waterlow4.utils.showElevation
+import java.util.*
 
 class QuestionFragment : Fragment() {
 
     private var binding: FragmentQuestionBinding? = null
-    private val viewModel: QuestionVM by activityViewModels()
+    private val viewModel: MainVM by activityViewModels()
+    private var toast: Toast? = null
     private val choiceAdapter = ChoiceAdapter()
+    private var timer: Timer? = null
+
     private lateinit var question: Question
 
     override fun onCreateView(
@@ -27,27 +34,26 @@ class QuestionFragment : Fragment() {
         binding = FragmentQuestionBinding.inflate(inflater)
 
         binding?.backButton?.setOnClickListener {
-            if (!viewModel.displayPreviousQuestion())
+            if (isButtonEnabled().not()) {
+                showWarningToast()
+                return@setOnClickListener
+            }
+            it.hideElevation()
+            if (!viewModel.displayPreviousQuestion()) {
                 findNavController().popBackStack()
+                viewModel.resetSelectedOptions()
+            }
         }
 
         binding?.continueButton?.setOnClickListener {
-            val selectedPositions = choiceAdapter.selectedPositions
-            if (selectedPositions.isNotEmpty()) {
-                selectedPositions.forEach {
-                    viewModel.score += question.values[it]
-                }
-            } else {
-                Toast.makeText(
-                    requireContext(),
-                    "Please select an answer to continue",
-                    Toast.LENGTH_SHORT
-                ).show();
+            if (isButtonEnabled().not()) {
+                showWarningToast()
                 return@setOnClickListener
             }
-
+            it.hideElevation()
             if (!viewModel.displayNextQuestion()) {
-                //TODO display Result Fragment
+                findNavController().popBackStack()
+                findNavController().navigate(R.id.resultFragment)
             }
         }
 
@@ -61,14 +67,46 @@ class QuestionFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding?.questionFragment = this
         viewModel.questionIndex.observe(viewLifecycleOwner) { index ->
-            question = questionList[index]
+            question = viewModel.getQuestionOfIndex(index)
             binding?.title?.text = question.title
             binding?.subtitle?.text = question.subtitle
+            binding?.subtitle?.visibility =
+                if (question.subtitle.isNullOrEmpty()) View.GONE
+                else View.VISIBLE
             binding?.choicesRecyclerView?.scrollToPosition(0)
-            choiceAdapter.reset(question.choices)
+            choiceAdapter.reset(question)
+            showButtonElevation()
         }
     }
 
+    private fun showButtonElevation() {
+        timer?.cancel()
+        timer = Timer().apply {
+            schedule(object : TimerTask() {
+                override fun run() {
+                    requireActivity().runOnUiThread {
+                        binding?.backButton?.showElevation()
+                        binding?.continueButton?.showElevation()
+                    }
+                }
+            }, 200)
+        }
+    }
+
+    private fun isButtonEnabled() = question.selectedOptions.isNotEmpty()
+
+    private fun showWarningToast() {
+        toast?.cancel()
+        toast = Toast.makeText(
+            requireContext(),
+            "Please select an answer to continue",
+            Toast.LENGTH_SHORT
+        ).apply { show() }
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        timer?.cancel()
+    }
 }

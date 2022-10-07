@@ -15,5 +15,16 @@
     <color name="Amber">#FF8511</color>
 
     <color name="light_grey">#FCFCFC</color>
-    <color name="light_green">#34B54A</color>
+    <color name="light_green">#85cc88</color>
+
+    <color name="light_pink">#e698ae</color>
+    <color name="light_brown">#d38b6b</color>
+
+    <color name="choice_stroke_color_selected">#978781</color>
+    <color name="choice_stroke_color_unselected">#877d7c</color>
+
+    <color name="score_green">#60FE60</color>
+    <color name="score_pink">#FE60BA</color>
+    <color name="score_orange">#FFB761</color>
+    <color name="score_red">#FF0101</color>
 </resources>

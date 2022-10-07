@@ -4,13 +4,14 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.1335" />
+        <entry key="app/src/main/res/drawable/question_background.xml" value="0.132" />
         <entry key="app/src/main/res/drawable/shadowy_bckgrd.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.1693840579710145" />
         <entry key="app/src/main/res/layout/fragment_gender.xml" value="0.1693840579710145" />
         <entry key="app/src/main/res/layout/fragment_question.xml" value="0.25" />
-        <entry key="app/src/main/res/layout/fragment_result.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_result.xml" value="0.165" />
         <entry key="app/src/main/res/layout/fragment_start.xml" value="0.1693840579710145" />
-        <entry key="app/src/main/res/layout/list_item_question.xml" value="0.21467391304347827" />
+        <entry key="app/src/main/res/layout/list_item_question.xml" value="0.375" />
         <entry key="app/src/main/res/layout/result_page.xml" value="0.335" />
       </map>
     </option>

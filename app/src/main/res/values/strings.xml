@@ -1,63 +1,240 @@
 <resources>
     <string name="app_name">Waterlow4</string>
+
+    <!--Question 1-->
+    <string name="question_1_title">Gender</string>
+    <string name="question_1_subtitle"></string>
+    <string-array name="question_1_choices">
+        <item>@string/male</item>
+        <item>@string/female</item>
+    </string-array>
+    <integer-array name="question_1_values">
+        <item>1</item>
+        <item>2</item>
+    </integer-array>
     <string name="female">Female</string>
     <string name="male">Male</string>
-    <string name="skin_type">Skin type</string>
-    <string name="_14_49">14 - 49</string>
-    <string name="_50_to_64">50 to 64</string>
-    <string name="_75_to_80">75 to 80</string>
-    <string name="over_81">Over 81</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="underweight_below_20">Underweight: below 20</string>
-    <string name="obese_above_30">Obese: above 30</string>
-    <string name="above_average_25_29_9">Above Average: 25 - 29.9</string>
-    <string name="above_average_20_24_9">above_average_20_24_9</string>
-    <string name="healthy">Healthy</string>
-    <string name="tissue_paper">Tissue Paper</string>
-    <string name="dry">Dry</string>
-    <string name="oedamatous">Oedamatous</string>
-    <string name="clammy_pyrexia">Clammy, Pyrexia</string>
-    <string name="discoloured_grade_1">Discoloured (Grade 1)</string>
-    <string name="broken_spots_grade_2_4">Broken spots (Grade 2-4)</string>
-    <string name="chairbound_wheelchair">Chairbound (wheelchair)</string>
-    <string name="bedbound_e_g_traction">Bedbound e.g Traction</string>
-    <string name="restricted">Restricted</string>
-    <string name="apathetic">Apathetic</string>
-    <string name="restless_fidgety">Restless, Fidgety</string>
-    <string name="fully">Fully</string>
-    <string name="faecal_incontinence">Faecal incontinence</string>
-    <string name="urine_incontinence">Urine, incontinence</string>
-    <string name="complete_catheterised">Complete, Catheterised</string>
-    <string name="no1">No</string>
-    <string name="yes_0_5_5kg">Yes, 0.5 - 5kg</string>
-    <string name="yes_5kg_10kg">Yes, 5kg - 10kg</string>
-    <string name="yes_10kg_15kg">Yes, 10kg - 15kg</string>
-    <string name="yes_15kg"><![CDATA[Yes, > 15kg]]></string>
-    <string name="no2">No</string>
-    <string name="yes">Yes</string>
-    <string name="none1">None</string>
-    <string name="restless_fidgety1">Restless, Fidgety</string>
-    <string name="restless_fidgety2">Restless, Fidgety</string>
-    <string name="terminal_cachexia">Terminal Cachexia</string>
-    <string name="multiple_organ_failure">Multiple organ failure</string>
-    <string name="perpheral_vascular_disease">Perpheral Vascular Disease</string>
-    <string name="anemia">Anemia</string>
-    <string name="smoking">Smoking</string>
-    <string name="none2">None</string>
-    <string name="moderate">Moderate</string>
-    <string name="moderate_to_severe">Moderate to severe</string>
-    <string name="severe">Severe</string>
-    <string name="major_surgery_or_trauma">Major surgery or trauma?</string>
-    <string name="none3">None</string>
-    <string name="orthopaedic_spinal">Orthopaedic/Spinal</string>
-    <string name="on_table_2_hours"><![CDATA[On table > 2 hours]]></string>
-    <string name="on_table_6_hours"><![CDATA[On table > 6 hours]]></string>
-    <string name="none4">None</string>
-    <string name="_1">1</string>
-    <string name="_2">2</string>
-    <string name="_3">3</string>
-    <string name="_4">4</string>
+
+
+    <!--Question 2-->
+    <string name="question_2_title">Age</string>
+    <string name="question_2_subtitle"></string>
+    <string-array name="question_2_choices">
+        <item>14 – 49</item>
+        <item>50 – 64</item>
+        <item>65 – 74</item>
+        <item>75 – 80</item>
+        <item>81+</item>
+    </string-array>
+    <integer-array name="question_2_values">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+    </integer-array>
+
+
+    <!--Question 3-->
+    <string name="question_3_title">BMI</string>
+    <string name="question_3_subtitle"></string>
+    <string-array name="question_3_choices">
+        <item>Average: 20 – 24.9</item>
+        <item>Above Average: 25 – 29.9</item>
+        <item>Obese: above 30</item>
+        <item>Underweight: below 20</item>
+    </string-array>
+    <integer-array name="question_3_values">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </integer-array>
+
+    <!--Question 4-->
+    <string name="question_4_title">Skin Type</string>
+    <string name="question_4_subtitle"></string>
+    <string-array name="question_4_choices">
+        <item>Healthy</item>
+        <item>Tissue Paper</item>
+        <item>Dry</item>
+        <item>Oedamatous</item>
+        <item>Clammy, Pyrexia</item>
+        <item>Discoloured (Grade 1)</item>
+        <item>Broken spots (Grade 2 – 4)</item>
+    </string-array>
+    <integer-array name="question_4_values">
+        <item>0</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </integer-array>
+
+
+    <!--Question 5-->
+    <string name="question_5_title">Mobility</string>
+    <string name="question_5_subtitle"></string>
+    <string-array name="question_5_choices">
+        <item>Fully</item>
+        <item>Restless, Fidgety</item>
+        <item>Apathetic</item>
+        <item>Restricted</item>
+        <item>Bedbound e.g Traction</item>
+        <item>Chairbound (Wheelchair)</item>
+    </string-array>
+    <integer-array name="question_5_values">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+    </integer-array>
+
+
+    <!--Question 6-->
+    <string name="question_6_title">Continence</string>
+    <string name="question_6_subtitle"></string>
+    <string-array name="question_6_choices">
+        <item>Complete, Catheterised</item>
+        <item>Urine, incontinence</item>
+        <item>Faecal incontinence</item>
+        <item>Doubly incontinence</item>
+    </string-array>
+    <integer-array name="question_6_values">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </integer-array>
+
+
+    <!--Question 7-->
+    <string name="question_7_title">Recent Weight Loss</string>
+    <string name="question_7_subtitle"></string>
+    <string-array name="question_7_choices">
+        <item>No</item>
+        <item>Unsure</item>
+        <item>Yes, 0.5 – 5kg</item>
+        <item>Yes, 5kg – 10kg</item>
+        <item>Yes, 10kg – 15kg</item>
+        <item>Yes, >15kg</item>
+    </string-array>
+    <integer-array name="question_7_values">
+        <item>0</item>
+        <item>2</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+    </integer-array>
+
+
+    <!--Question 8-->
+    <string name="question_8_title">Poor Appetite</string>
+    <string name="question_8_subtitle"></string>
+    <string-array name="question_8_choices">
+        <item>No</item>
+        <item>Yes</item>
+    </string-array>
+    <integer-array name="question_8_values">
+        <item>0</item>
+        <item>1</item>
+    </integer-array>
+
+    <!--Question 9-->
+    <string name="question_9_title">Tissue Malnutrition</string>
+    <string name="question_9_subtitle"></string>
+    <string-array name="question_9_choices">
+        <item>None</item>
+        <item>Restless, Fidgety</item>
+        <item>Terminal Cachexia</item>
+        <item>Multiple Organ Failure</item>
+        <item>Peripheral Vascular Disease</item>
+        <item>Anemia</item>
+        <item>Smoking</item>
+    </string-array>
+    <integer-array name="question_9_values">
+        <item>0</item>
+        <item>8</item>
+        <item>8</item>
+        <item>5</item>
+        <item>5</item>
+        <item>2</item>
+        <item>1</item>
+    </integer-array>
+
+
+    <!--Question 10-->
+    <string name="question_10_title">Neurological Deficit</string>
+    <string name="question_10_subtitle"></string>
+    <string-array name="question_10_choices">
+        <item>None</item>
+        <item>Moderate</item>
+        <item>Moderate to severe</item>
+        <item>Severe</item>
+    </string-array>
+    <integer-array name="question_10_values">
+        <item>0</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+    </integer-array>
+
+
+    <!--Question 11-->
+    <string name="question_11_title">Major Surgery or Trauma</string>
+    <string name="question_11_subtitle"></string>
+    <string-array name="question_11_choices">
+        <item>None</item>
+        <item>Orthopaedic/Spinal</item>
+        <item>On table > 2 hours</item>
+        <item>On table > 6 hours</item>
+    </string-array>
+    <integer-array name="question_11_values">
+        <item>0</item>
+        <item>5</item>
+        <item>5</item>
+        <item>5</item>
+    </integer-array>
+
+
+    <!--Question 12-->
+    <string name="question_12_title">Medication</string>
+    <string name="question_12_subtitle">High dose steroids, cytotoxicx, anti-inflamatory</string>
+    <string-array name="question_12_choices">
+        <item>None</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+    </string-array>
+    <integer-array name="question_12_values">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+    </integer-array>
+
+
     <string name="start">start</string>
     <string name="question_fragment">questionFragment</string>
+
+    <!--Result Fragment-->
+    <string name="result_title">Your Waterlow score is ....</string>
+    <string name="low_risk">Low Risk</string>
+    <string name="risk">Risk</string>
+    <string name="high_risk">High Risk</string>
+    <string name="very_high_risk">Very High Risk</string>
+    <string name="reset">Reset</string>
+    <string name="button_continue">Continue</string>
+    <string name="button_back">Back</string>
+    <string name="privacy_policy"><a href="http://www.google.com">Privacy Policy</a></string>
+    <string name="button_start">Start</string>
+    <string name="calculator">Calculator</string>
+    <string name="waterlow">WATERLOW</string>
 </resources>

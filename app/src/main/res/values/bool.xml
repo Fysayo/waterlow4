@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <bool name="question_1_is_multiple_choices">false</bool>
+    <bool name="question_2_is_multiple_choices">false</bool>
+    <bool name="question_3_is_multiple_choices">false</bool>
+    <bool name="question_4_is_multiple_choices">true</bool>
+    <bool name="question_5_is_multiple_choices">true</bool>
+    <bool name="question_6_is_multiple_choices">false</bool>
+    <bool name="question_7_is_multiple_choices">false</bool>
+    <bool name="question_8_is_multiple_choices">false</bool>
+    <bool name="question_9_is_multiple_choices">true</bool>
+    <bool name="question_10_is_multiple_choices">false</bool>
+    <bool name="question_11_is_multiple_choices">false</bool>
+    <bool name="question_12_is_multiple_choices">false</bool>
+</resources>
