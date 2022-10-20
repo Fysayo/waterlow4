@@ -38,7 +38,10 @@ class MainVM(application: Application) : AndroidViewModel(application) {
             true
         } ?: false
 
-    private fun getCurrentQuestionIndex() = _questionIndex.value ?: 0
+    fun getCurrentQuestionIndex() = _questionIndex.value ?: 0
+
+    fun isCurrentQuestionWithSelectedOptions() =
+        getQuestionOfIndex(getCurrentQuestionIndex()).selectedOptions.isNotEmpty()
 
     fun getQuestionOfIndex(index: Int) = questionList[index]
 

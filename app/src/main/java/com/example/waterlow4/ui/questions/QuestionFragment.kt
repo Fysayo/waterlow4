@@ -15,6 +15,7 @@ import com.example.waterlow4.models.Question
 import com.example.waterlow4.ui.main.MainVM
 import com.example.waterlow4.utils.hideElevation
 import com.example.waterlow4.utils.showElevation
+import com.example.waterlow4.utils.showWarning
 import java.util.*
 
 class QuestionFragment : Fragment() {
@@ -34,7 +35,7 @@ class QuestionFragment : Fragment() {
         binding = FragmentQuestionBinding.inflate(inflater)
 
         binding?.backButton?.setOnClickListener {
-            if (isButtonEnabled().not()) {
+            if (isButtonEnabled().not() && viewModel.getCurrentQuestionIndex() != 0) {
                 showWarningToast()
                 return@setOnClickListener
             }
@@ -94,15 +95,11 @@ class QuestionFragment : Fragment() {
         }
     }
 
-    private fun isButtonEnabled() = question.selectedOptions.isNotEmpty()
+    private fun isButtonEnabled() = viewModel.isCurrentQuestionWithSelectedOptions()
 
     private fun showWarningToast() {
         toast?.cancel()
-        toast = Toast.makeText(
-            requireContext(),
-            "Please select an answer to continue",
-            Toast.LENGTH_SHORT
-        ).apply { show() }
+        toast = requireContext().showWarning()
     }
 
     override fun onDestroyView() {

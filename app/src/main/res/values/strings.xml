@@ -223,6 +223,7 @@
 
     <string name="start">start</string>
     <string name="question_fragment">questionFragment</string>
+    <string name="warning_message">Please select an answer to continue</string>
 
     <!--Result Fragment-->
     <string name="result_title">Your Waterlow score is ....</string>
